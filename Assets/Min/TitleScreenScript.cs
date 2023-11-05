@@ -29,7 +29,7 @@ public class TitleScreenScript : MonoBehaviour
     IEnumerator FadeToBlackPlayAndWait(){
         Animator fadetoblackanimation = fadetoblack_obj.GetComponent<Animator>();
         fadetoblackanimation.SetTrigger("FadeToBlack");
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Sample Scene");
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(1);
     }
 }
