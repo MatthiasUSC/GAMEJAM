@@ -126,6 +126,10 @@ public class PlayerController : MonoBehaviour
                 if(Input.GetKey(KeyCode.E)){
                     other.GetComponent<ActivateGenerator>().DoIt();
                 }
+            } else if(other.GetComponent<ProgressBarBehavior>() != null){
+                if(Input.GetKey(KeyCode.E)){
+                    other.GetComponent<ProgressBarBehavior>().Holding();
+                }
             } 
         }
     }
