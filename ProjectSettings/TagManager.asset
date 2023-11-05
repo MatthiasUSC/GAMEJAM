@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Vent
   - Locker
+  - LeftDoor
+  - RightDoor
   layers:
   - Default
   - TransparentFX

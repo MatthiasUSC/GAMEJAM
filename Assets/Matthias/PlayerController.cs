@@ -97,6 +97,13 @@ public class PlayerController : MonoBehaviour
                 if(Input.GetKey(KeyCode.E) && keyDoorReset){
                     transform.position = other.GetComponent<DoorScript>().connectedDoor.GetComponent<DoorScript>().enterTarget.transform.position;
                     keyDoorReset = false;
+
+                    int dir = -1;
+                    if(other.tag == "RightDoor"){
+                        dir = 1;
+                    }
+                    int currRoom = other.transform.parent.GetComponent<RoomData>().GetRoomNumber();
+                    GetComponent<PlayerDescriptor>().UpdateRoom(currRoom + dir);
                 }
             }
         }
@@ -106,6 +113,7 @@ public class PlayerController : MonoBehaviour
         playerSprite.GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         inLocker = false;
+        GetComponent<PlayerDescriptor>().SetHiding(false);
     }
 
     private void EnterLocker(GameObject locker){
@@ -113,5 +121,6 @@ public class PlayerController : MonoBehaviour
         inLocker = true;
         playerSprite.GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        GetComponent<PlayerDescriptor>().SetHiding(true);
     }
 }
