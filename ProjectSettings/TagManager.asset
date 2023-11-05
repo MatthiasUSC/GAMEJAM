@@ -9,6 +9,7 @@ TagManager:
   - LeftDoor
   - RightDoor
   - FadeToBlack
+  - Monster
   layers:
   - Default
   - TransparentFX

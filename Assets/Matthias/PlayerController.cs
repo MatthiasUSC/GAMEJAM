@@ -2,12 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
 
+    public GameObject jumpscareUI;
+    public GameObject jumpscareSound;
+    public bool isDead = false;
+    IEnumerator deathScene(){
+        jumpscareUI.GetComponent<UnityEngine.UI.Image>().enabled = true;
+        jumpscareSound.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(1);
+    }
     public static GameObject SelectObject()
     {
         GameObject mObject = null;
@@ -88,7 +98,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other){
         if(inLocker == false){
-            if(other.tag == "Locker"){ // If touching locker  
+            if(other.tag == "Monster"){
+                if(!isDead){
+                    isDead = true;
+                    StartCoroutine(deathScene());
+                }
+            } else if(other.tag == "Locker"){ // If touching locker  
                     if(Input.GetKey(KeyCode.E)){
                         keyLockerReset = false;
                         EnterLocker(other.gameObject);
@@ -112,11 +127,6 @@ public class PlayerController : MonoBehaviour
                     other.GetComponent<ActivateGenerator>().DoIt();
                 }
             } 
-            // else if(other.GetComponent<EscapePodTimer>() != null){
-            //     if(Input.GetKey(KeyCode.E)){
-            //         other.GetComponent<EscapePodTimer>().makeProgress();
-            //     }
-            // }
         }
     }
 
