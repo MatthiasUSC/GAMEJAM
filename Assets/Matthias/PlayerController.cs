@@ -94,20 +94,26 @@ public class PlayerController : MonoBehaviour
                         EnterLocker(other.gameObject);
                     }
             } else if(other.GetComponent<DoorScript>() != null){ // If touching door
-                if(Input.GetKey(KeyCode.E) && keyDoorReset){
-                    transform.position = other.GetComponent<DoorScript>().connectedDoor.GetComponent<DoorScript>().enterTarget.transform.position;
-                    keyDoorReset = false;
+                if(!other.GetComponent<DoorScript>().isLocked){
+                    if(Input.GetKey(KeyCode.E) && keyDoorReset){
+                        transform.position = other.GetComponent<DoorScript>().connectedDoor.GetComponent<DoorScript>().enterTarget.transform.position;
+                        keyDoorReset = false;
 
-                    int dir = -1;
-                    if(other.tag == "RightDoor"){
-                        dir = 1;
+                        int dir = -1;
+                        if(other.tag == "RightDoor"){
+                            dir = 1;
+                        }
+                        int currRoom = other.transform.parent.GetComponent<RoomData>().GetRoomNumber();
+                        GetComponent<PlayerDescriptor>().UpdateRoom(currRoom + dir);
                     }
-                    int currRoom = other.transform.parent.GetComponent<RoomData>().GetRoomNumber();
-                    GetComponent<PlayerDescriptor>().UpdateRoom(currRoom + dir);
                 }
             } else if(other.GetComponent<ActivateGenerator>() != null){
                 if(Input.GetKey(KeyCode.E)){
                     other.GetComponent<ActivateGenerator>().DoIt();
+                }
+            } else if(other.GetComponent<EscapePodTimer>() != null){
+                if(Input.GetKey(KeyCode.E)){
+                    other.GetComponent<EscapePodTimer>().makeProgress();
                 }
             }
         }

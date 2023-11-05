@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class EscapePodTimer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    
+    float timeToEscape = 5;
+    float progress = 0;
+    
+    public void makeProgress(){
+        progress += Time.fixedDeltaTime;
+        if(progress > timeToEscape){
+            escape();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void escape(){
+        Debug.Log("Escaped!");
     }
 }

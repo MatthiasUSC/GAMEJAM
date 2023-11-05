@@ -8,6 +8,7 @@ public class ActivateGenerator : MonoBehaviour
     bool didIt = false;
 
     public LightingSettings currentLightingSettings;
+    public GameObject lockedDoor;
 
     IEnumerator EmergencyLights()
     {
@@ -34,6 +35,7 @@ public class ActivateGenerator : MonoBehaviour
         if(!didIt){
             tth.generatorPowered = true;
             StartCoroutine(EmergencyLights());
+            lockedDoor.GetComponent<DoorScript>().isLocked = false;
             didIt = true;
         }
     }
