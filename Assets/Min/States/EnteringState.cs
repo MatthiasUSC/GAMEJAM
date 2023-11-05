@@ -9,7 +9,7 @@ public class EnteringState : MonsterState
     GameObject nextVent;
 
     public EnteringState(){
-        timeEntering = 2;
+        timeEntering = 1;
         timeWaited = 0;
     }
 

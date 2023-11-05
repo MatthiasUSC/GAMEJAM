@@ -10,15 +10,18 @@ public class ActivateGenerator : MonoBehaviour
     public LightingSettings currentLightingSettings;
     public GameObject lockedDoor;
 
-    IEnumerator EmergencyLights()
+    bool flashed = true;
+
+    IEnumerator RedFlash()
     {
-        while(true){
-             RenderSettings.ambientLight = Color.red;
-            yield return new WaitForSeconds(.1f);
-            RenderSettings.ambientLight = Color.black;    
-            yield return new WaitForSeconds(.5f);
-        }
+        flashed = false;
+        RenderSettings.ambientLight = Color.red;
+        yield return new WaitForSeconds(.1f);
+        RenderSettings.ambientLight = Color.black; 
+        yield return new WaitForSeconds(.5f);
+        flashed = true;
     }
+
 
     void Start()
     {
@@ -27,14 +30,15 @@ public class ActivateGenerator : MonoBehaviour
 
     void Update()
     {
-        
+        if(tth.generatorPowered && flashed){
+            StartCoroutine(RedFlash());
+        }
     }
 
     public void DoIt()
     {
         if(!didIt){
             tth.generatorPowered = true;
-            StartCoroutine(EmergencyLights());
             lockedDoor.GetComponent<DoorScript>().isLocked = false;
             didIt = true;
         }

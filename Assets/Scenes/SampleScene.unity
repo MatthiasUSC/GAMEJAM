@@ -979,6 +979,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &762343444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7659301888444997262, guid: 84ce240a27dc6314d806b76da14c7e2a, type: 3}
+  m_PrefabInstance: {fileID: 1289293479}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762343440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa2256a41748df4298668792ec07e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790501593
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,8 +1408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09e7194c640cf841b1bd89a5adb563e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLoad: 15
-  started: 0
+  m: {fileID: 762343444}
+  timeToLoad: 10
+  holding: 0
 --- !u!61 &897891046
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1764,7 +1776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047616002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.54, z: 0}
+  m_LocalPosition: {x: 0.03, y: 1.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2461,13 +2473,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 7659301888444997262, guid: 84ce240a27dc6314d806b76da14c7e2a, type: 3}
+      propertyPath: currRoom
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7659301888444997263, guid: 84ce240a27dc6314d806b76da14c7e2a, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7659301888444997263, guid: 84ce240a27dc6314d806b76da14c7e2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.7
+      value: 30.23
       objectReference: {fileID: 0}
     - target: {fileID: 7659301888444997263, guid: 84ce240a27dc6314d806b76da14c7e2a, type: 3}
       propertyPath: m_LocalPosition.y
