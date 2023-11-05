@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b7e593d6e0c79459b127534d5778de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupSprite: {fileID: 21300000, guid: 3206da5dee56065449e3ad800af2c1a5, type: 3}
+  popupSprite: {fileID: 21300000, guid: 00d9d35a0ea380d4d98ec8d10bdabe70, type: 3}
 --- !u!212 &419982006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b7e593d6e0c79459b127534d5778de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupSprite: {fileID: 21300000, guid: 3206da5dee56065449e3ad800af2c1a5, type: 3}
+  popupSprite: {fileID: 21300000, guid: 699757e6aaf221044afea025206677e3, type: 3}
 --- !u!212 &817585264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b7e593d6e0c79459b127534d5778de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupSprite: {fileID: 21300000, guid: 3206da5dee56065449e3ad800af2c1a5, type: 3}
+  popupSprite: {fileID: 21300000, guid: 03efa3e5cffb69e4b8f32cc1c623cf97, type: 3}
 --- !u!212 &1237624043
 SpriteRenderer:
   m_ObjectHideFlags: 0
