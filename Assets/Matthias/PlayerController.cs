@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public bool inLocker = false;
     private bool keyLockerReset = true;
 
+    private bool keyDoorReset = true;
+
 
     // Update is called once per frame
     bool isPopupShowing(){
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update(){
+
         if(!inLocker){
             if(Input.GetKeyDown(KeyCode.Mouse0)){
                 if(isPopupShowing()){
@@ -63,6 +66,10 @@ public class PlayerController : MonoBehaviour
                     
                 }
             }
+
+            if(Input.GetKeyUp(KeyCode.E)){
+                keyDoorReset = true;
+            }
         } else {
             if(Input.GetKeyUp(KeyCode.E)){
                 if(keyLockerReset == true){
@@ -76,13 +83,18 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D other){
-        if(other.tag == "Locker"){
-            if(inLocker == false){
-                if(Input.GetKey(KeyCode.E)){
-                    keyLockerReset = false;
-                    EnterLocker(other.gameObject);
+        if(inLocker == false){
+            if(other.tag == "Locker"){ // If touching locker  
+                    if(Input.GetKey(KeyCode.E)){
+                        keyLockerReset = false;
+                        EnterLocker(other.gameObject);
+                    }
+            } else if(other.GetComponent<DoorScript>() != null){ // If touching door
+                if(Input.GetKey(KeyCode.E) && keyDoorReset){
+                    transform.position = other.GetComponent<DoorScript>().connectedDoor.GetComponent<DoorScript>().enterTarget.transform.position;
+                    keyDoorReset = false;
                 }
-            } 
+            }
         }
     }
 
