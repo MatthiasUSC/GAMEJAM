@@ -5,6 +5,20 @@ using UnityEngine;
 public class ActivateGenerator : MonoBehaviour
 {
     ThingsThatHappen tth;
+    bool didIt = false;
+
+    public LightingSettings currentLightingSettings;
+
+    IEnumerator EmergencyLights()
+    {
+        while(true){
+             RenderSettings.ambientLight = Color.red;
+            yield return new WaitForSeconds(.1f);
+            RenderSettings.ambientLight = Color.black;    
+            yield return new WaitForSeconds(.5f);
+        }
+    }
+
     void Start()
     {
         tth = FindObjectOfType<ThingsThatHappen>();
@@ -17,6 +31,10 @@ public class ActivateGenerator : MonoBehaviour
 
     public void DoIt()
     {
-        tth.generatorPowered = true;
+        if(!didIt){
+            tth.generatorPowered = true;
+            StartCoroutine(EmergencyLights());
+            didIt = true;
+        }
     }
 }

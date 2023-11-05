@@ -105,6 +105,10 @@ public class PlayerController : MonoBehaviour
                     int currRoom = other.transform.parent.GetComponent<RoomData>().GetRoomNumber();
                     GetComponent<PlayerDescriptor>().UpdateRoom(currRoom + dir);
                 }
+            } else if(other.GetComponent<ActivateGenerator>() != null){
+                if(Input.GetKey(KeyCode.E)){
+                    other.GetComponent<ActivateGenerator>().DoIt();
+                }
             }
         }
     }
