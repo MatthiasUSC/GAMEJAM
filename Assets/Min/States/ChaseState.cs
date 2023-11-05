@@ -13,8 +13,9 @@ public class ChaseState : MonsterState
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
         Debug.Log("Monster is chasing in room " + monster.GetCurrentRoom());
         if(target.GetCurrentRoom() != monster.GetCurrentRoom()){
+            int dirToPlayer = -(monster.GetCurrentRoom() - target.GetCurrentRoom())/Mathf.Abs(monster.GetCurrentRoom() - target.GetCurrentRoom());
             TrackingState ts = new TrackingState();
-            ts.SetPlayersLastLocation(target.GetCurrentRoom());
+            ts.SetPlayersLastLocation(target.GetCurrentRoom(), dirToPlayer);
             monster.SetNextState(ts);
         }
         else{

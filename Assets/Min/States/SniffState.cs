@@ -60,8 +60,8 @@ public class SniffState : MonsterState
                     monster.transform.position += new Vector3(xvel, 0, 0) * Time.deltaTime;
                 }
                 else{
-                    if(monster.NearVent() && Mathf.Abs(monster.transform.position.x - destVent.transform.position.x) <= 1){
-                        EnteringState es = new EnteringState();
+                    if(Mathf.Abs(monster.transform.position.x - destVent.transform.position.x) <= 0.01){
+                        LeaveState es = new LeaveState();
                         es.SetNextRoom(monster.GetCurrentRoom() + dirHeaded, dirHeaded);
                         monster.SetNextState(new SearchingState());
                         monster.SetGlobalState(es);

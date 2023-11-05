@@ -329,6 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287043982}
+  - component: {fileID: 287043983}
   m_Layer: 0
   m_Name: Vent_r3r
   m_TagString: Untagged
@@ -351,6 +352,22 @@ Transform:
   m_Father: {fileID: 529639296}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &287043983
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287043981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &316888947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4271388241683243737, guid: 082cf0a2e326d0042bbcb22a8b177c12, type: 3}
@@ -365,6 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329432819}
+  - component: {fileID: 329432820}
   m_Layer: 0
   m_Name: Vent_r5
   m_TagString: Untagged
@@ -387,6 +405,22 @@ Transform:
   m_Father: {fileID: 869874089}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &329432820
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329432818}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,6 +1002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1050067487}
+  - component: {fileID: 1050067488}
   m_Layer: 0
   m_Name: Vent_r4r
   m_TagString: Untagged
@@ -990,6 +1025,22 @@ Transform:
   m_Father: {fileID: 4271388242517201062}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1050067488
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050067486}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &1233286948
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233286949}
+  - component: {fileID: 1233286950}
   m_Layer: 0
   m_Name: Vent_r2r
   m_TagString: Untagged
@@ -1021,6 +1073,22 @@ Transform:
   m_Father: {fileID: 906320425}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1233286950
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233286948}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &1264923854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739724968}
+  - component: {fileID: 1739724969}
   m_Layer: 0
   m_Name: Vent_r2l
   m_TagString: Untagged
@@ -1501,6 +1570,22 @@ Transform:
   m_Father: {fileID: 906320425}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1739724969
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739724967}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1001 &1805168859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1567,6 +1652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1915544171}
+  - component: {fileID: 1915544172}
   m_Layer: 0
   m_Name: Vent_r1
   m_TagString: Untagged
@@ -1589,6 +1675,22 @@ Transform:
   m_Father: {fileID: 4545698527114333350}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1915544172
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915544170}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &1983698887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,6 +1776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044985125}
+  - component: {fileID: 2044985126}
   m_Layer: 0
   m_Name: Vent_r3l
   m_TagString: Untagged
@@ -1696,6 +1799,22 @@ Transform:
   m_Father: {fileID: 529639296}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2044985126
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044985124}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!1 &2087938376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +1878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134041409}
+  - component: {fileID: 2134041410}
   m_Layer: 0
   m_Name: Vent_r4l
   m_TagString: Untagged
@@ -1781,6 +1901,22 @@ Transform:
   m_Father: {fileID: 4271388242517201062}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2134041410
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134041408}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!4 &4271388241314358658
 Transform:
   m_ObjectHideFlags: 0

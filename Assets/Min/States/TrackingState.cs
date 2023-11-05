@@ -7,9 +7,11 @@ public class TrackingState : MonsterState
     float timePlayerCanStay = 3;
     float timePlayerStayed = 0;
     int lastRoomPlayerWasIn;
+    int dirHeaded;
 
-    public void SetPlayersLastLocation(int ll){
+    public void SetPlayersLastLocation(int ll, int dh){
         lastRoomPlayerWasIn = ll;
+        dirHeaded = dh;
     }
 
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
@@ -19,9 +21,8 @@ public class TrackingState : MonsterState
                 monster.SetNextState(new ChaseState());
             }
             else{
-                int dirToPlayer = -(monster.GetCurrentRoom() - target.GetCurrentRoom())/Mathf.Abs(monster.GetCurrentRoom() - target.GetCurrentRoom());
                 SniffState ss = new SniffState();
-                ss.SetDirection(dirToPlayer);
+                ss.SetDirection(dirHeaded);
                 monster.SetNextState(ss);
             }
         }
