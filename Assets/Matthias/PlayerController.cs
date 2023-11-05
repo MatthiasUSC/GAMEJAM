@@ -37,10 +37,15 @@ public class PlayerController : MonoBehaviour
     {
         if(!inLocker){
             if(Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)){
+                playerSprite.GetComponent<Animator>().speed = 1;
+                playerSprite.GetComponent<SpriteRenderer>().flipX = true;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
             } else if(Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A)){
+                playerSprite.GetComponent<Animator>().speed = 1;
+                playerSprite.GetComponent<SpriteRenderer>().flipX = false;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(playerSpeed, GetComponent<Rigidbody2D>().velocity.y);
             } else {
+                playerSprite.GetComponent<Animator>().speed = 0;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
             }
         } else {
@@ -49,7 +54,6 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update(){
-
         if(!inLocker){
             if(Input.GetKeyDown(KeyCode.Mouse0)){
                 if(isPopupShowing()){
