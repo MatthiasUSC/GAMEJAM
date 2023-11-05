@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
         jumpscareUI.GetComponent<UnityEngine.UI.Image>().enabled = true;
         jumpscareSound.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
     public static GameObject SelectObject()
     {
