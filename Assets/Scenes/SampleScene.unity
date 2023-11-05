@@ -2439,7 +2439,7 @@ PrefabInstance:
     - target: {fileID: 4271388243334394540, guid: 082cf0a2e326d0042bbcb22a8b177c12, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2d0472db7c104bd42b23ce1f7548780e, type: 3}
+      objectReference: {fileID: 21300000, guid: 6526fd245e7580a4f81f78679e2517cf, type: 3}
     - target: {fileID: 4271388243334394540, guid: 082cf0a2e326d0042bbcb22a8b177c12, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2695,7 +2695,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: eb0d4de2bd870214b894c68fb87784d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8506293c0fb4c594087c98f33f635e9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4766,7 +4766,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: f80ec7b8533e83645b6943ad00dbdb12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a67195a8f01aa9a47b4ea7cd1cca484f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
