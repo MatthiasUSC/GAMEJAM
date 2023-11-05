@@ -111,11 +111,12 @@ public class PlayerController : MonoBehaviour
                 if(Input.GetKey(KeyCode.E)){
                     other.GetComponent<ActivateGenerator>().DoIt();
                 }
-            } else if(other.GetComponent<EscapePodTimer>() != null){
-                if(Input.GetKey(KeyCode.E)){
-                    other.GetComponent<EscapePodTimer>().makeProgress();
-                }
-            }
+            } 
+            // else if(other.GetComponent<EscapePodTimer>() != null){
+            //     if(Input.GetKey(KeyCode.E)){
+            //         other.GetComponent<EscapePodTimer>().makeProgress();
+            //     }
+            // }
         }
     }
 

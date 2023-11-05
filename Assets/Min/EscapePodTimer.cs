@@ -5,8 +5,8 @@ using UnityEngine;
 public class EscapePodTimer : MonoBehaviour
 {
     
-    float timeToEscape = 5;
-    float progress = 0;
+    public float timeToEscape = 5;
+    public float progress = 0;
     
     public void makeProgress(){
         progress += Time.fixedDeltaTime;
