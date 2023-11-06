@@ -38,6 +38,7 @@ public class ActivateGenerator : MonoBehaviour
     public void DoIt()
     {
         if(!didIt){
+            GetComponent<AudioSource>().Play();
             tth.generatorPowered = true;
             lockedDoor.GetComponent<DoorScript>().isLocked = false;
             didIt = true;

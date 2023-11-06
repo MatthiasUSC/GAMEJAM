@@ -10,6 +10,7 @@ public class MonsterTrigger : MonoBehaviour
             if(!isTriggered){
                 isTriggered = true;
                 other.GetComponent<PlayerDescriptor>().EncounterMonster();
+                GetComponent<AudioSource>().Play();
             }
         }
     }
