@@ -23,6 +23,7 @@ public class SniffState : MonsterState
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
         Debug.Log("Monster is sniffing in room " + monster.GetCurrentRoom());
         if(!target.IsHiding()){ // player is in sight
+            monster.GetComponentInChildren<Animator>().SetBool("MonsterMoving", false);
             monster.SetNextState(new ChaseState());
         }
         else{
@@ -58,9 +59,11 @@ public class SniffState : MonsterState
                     }
                     float xvel = dirHeaded * sniffAroundSpeed;
                     monster.transform.position += new Vector3(xvel, 0, 0) * Time.deltaTime;
+                    monster.GetComponentInChildren<Animator>().SetBool("MonsterMoving", true);
                 }
                 else{
                     if(Mathf.Abs(monster.transform.position.x - destVent.transform.position.x) <= 0.01){
+                        monster.GetComponentInChildren<Animator>().SetBool("MonsterMoving", false);
                         LeaveState es = new LeaveState();
                         es.SetNextRoom(monster.GetCurrentRoom() + dirHeaded, dirHeaded);
                         monster.SetNextState(new SearchingState());
@@ -69,6 +72,7 @@ public class SniffState : MonsterState
                     else{
                         float xvel = dirHeaded * sniffAroundSpeed;
                         monster.transform.position += new Vector3(xvel, 0, 0) * Time.deltaTime;
+                        monster.GetComponentInChildren<Animator>().SetBool("MonsterMoving", true);
                     }
                 }
             }

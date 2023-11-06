@@ -13,6 +13,7 @@ public class ChaseState : MonsterState
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
         Debug.Log("Monster is chasing in room " + monster.GetCurrentRoom());
         if(target.GetCurrentRoom() != monster.GetCurrentRoom()){
+            monster.GetComponentInChildren<Animator>().SetBool("MonsterMove", false);
             int dirToPlayer = -(monster.GetCurrentRoom() - target.GetCurrentRoom())/Mathf.Abs(monster.GetCurrentRoom() - target.GetCurrentRoom());
             TrackingState ts = new TrackingState();
             ts.SetPlayersLastLocation(target.GetCurrentRoom(), dirToPlayer);
@@ -24,6 +25,7 @@ public class ChaseState : MonsterState
 
             float xvelocity = (playerrb.position.x - monsterpos.x)/ Mathf.Abs(playerrb.position.x - monsterpos.x) * movespeed;
             monster.transform.position += new Vector3(xvelocity, 0, 0) * Time.deltaTime;
+                    monster.GetComponentInChildren<Animator>().SetBool("MonsterMove", true);
         }
     }
 }

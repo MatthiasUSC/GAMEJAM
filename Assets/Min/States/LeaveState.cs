@@ -7,9 +7,12 @@ public class LeaveState : MonsterState
     float timeLeaving;
     float timeWaited;
 
+    bool anim_triggered;
+
     public LeaveState(){
         timeLeaving = 2;
         timeWaited = 0;
+        anim_triggered = false;
     }
 
     int nextRoom;
@@ -25,6 +28,10 @@ public class LeaveState : MonsterState
     }
 
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
+        if(!anim_triggered){
+            monster.GetComponentInChildren<Animator>().SetTrigger("MonsterLeave");
+            anim_triggered = true;
+        }
         timeWaited += Time.deltaTime;
         if(timeWaited >= timeLeaving){
             EnteringState es = new EnteringState();

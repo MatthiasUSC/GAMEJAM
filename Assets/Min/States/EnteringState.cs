@@ -8,6 +8,8 @@ public class EnteringState : MonsterState
     float timeWaited;
     GameObject nextVent;
 
+    bool anim_triggered;
+
     public EnteringState(){
         timeEntering = 1;
         timeWaited = 0;
@@ -19,6 +21,8 @@ public class EnteringState : MonsterState
         Debug.Log("The next room is " + nr);
         Debug.Log("Direction headed: " + dirHeaded);
         nextRoom = nr;
+
+        anim_triggered = false;
 
         RoomListing roomlisting = GameObject.FindObjectOfType<RoomListing>();
         if(dirHeaded > 0) {// headed  right
@@ -32,6 +36,10 @@ public class EnteringState : MonsterState
     public override void Execute(MonsterBehavior monster, PlayerDescriptor target){
         monster.SetNextRoom(nextRoom);
         monster.transform.position = nextVent.transform.position;
+        if(!anim_triggered){
+            monster.GetComponentInChildren<Animator>().SetTrigger("MonsterEnter");
+            anim_triggered = true;
+        }
         timeWaited += Time.deltaTime;
         if(timeWaited >= timeEntering){
             monster.SetGlobalState(null);
